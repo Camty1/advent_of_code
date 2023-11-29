@@ -1,6 +1,11 @@
 #!/bin/bash
 
-YEAR=$(date +%Y)
+if [[ $# == 2 && $1 == "-y" ]]; then
+	YEAR=$2
+else
+	YEAR=$(date +%Y)
+
+fi
 
 if [ -d $YEAR ]; then
 	echo "$YEAR is already initialized"
